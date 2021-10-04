@@ -1,0 +1,496 @@
+{
+	"destination": "detailScreen",
+	"windowMinWidth": 1200,
+	"windowMaxWidth": 32000,
+	"windowMinHeight": 620,
+	"windowMaxHeight": 32000,
+	"width": 1200,
+	"height": 760,
+	"markerHeader": 15,
+	"markerBody": 200,
+	"markerBreak": 220,
+	"markerFooter": 240,
+	"events": [
+		"onLoad",
+		"onTimer",
+		"onPageChange"
+	],
+	"method": "method.4dm",
+	"pageFormat": {
+		"paperName": "A4",
+		"paperWidth": "842pt",
+		"paperHeight": "595pt"
+	},
+	"pages": [
+		{
+			"objects": {
+				"Tabs": {
+					"type": "tab",
+					"top": 20,
+					"left": 20,
+					"width": 1160,
+					"height": 720,
+					"sizingX": "grow",
+					"sizingY": "grow",
+					"dataSource": "tabs",
+					"dataSourceTypeHint": "arrayText",
+					"action": "gotoPage",
+					"events": [
+						"onClick"
+					],
+					"method": "ObjectMethods/Tabs.4dm"
+				},
+				"btnTrace": {
+					"type": "checkbox",
+					"text": "Trace code",
+					"top": 710,
+					"left": 1060,
+					"width": 120,
+					"height": 20,
+					"events": [
+						"onClick"
+					],
+					"dataSource": "Form:C1466.trace",
+					"sizingX": "move",
+					"sizingY": "move",
+					"focusable": false
+				},
+				"btnHtml": {
+					"type": "button",
+					"top": 800,
+					"left": 40,
+					"width": 180,
+					"height": 20,
+					"sizingY": "move",
+					"text": "Export to HTML",
+					"focusable": false,
+					"method": "ObjectMethods/btnHtml.4dm",
+					"events": [
+						"onClick"
+					]
+				}
+			}
+		},
+		{
+			"objects": {
+				"WParea2": {
+					"type": "write",
+					"top": 80,
+					"left": 100,
+					"width": 1000,
+					"height": 620,
+					"sizingX": "grow",
+					"sizingY": "grow",
+					"dataSource": "WParea",
+					"enterable": false,
+					"focusable": false,
+					"hideFocusRing": true,
+					"scrollbarVertical": "automatic",
+					"scrollbarHorizontal": "automatic",
+					"showSelection": true,
+					"showHorizontalRuler": false,
+					"showVerticalRuler": false,
+					"layoutMode": "embedded",
+					"borderStyle": "none",
+					"events": []
+				}
+			}
+		},
+		{
+			"objects": {
+				"Rectangle": {
+					"type": "rectangle",
+					"top": 60,
+					"left": 40,
+					"width": 560,
+					"height": 660,
+					"sizingX": "grow",
+					"sizingY": "grow",
+					"stroke": "#c0c0c0"
+				},
+				"WParea": {
+					"type": "write",
+					"top": 70,
+					"left": 50,
+					"width": 540,
+					"height": 640,
+					"sizingX": "grow",
+					"sizingY": "grow",
+					"dataSource": "WParea",
+					"hideFocusRing": true,
+					"scrollbarVertical": "automatic",
+					"scrollbarHorizontal": "automatic",
+					"dpi": 0,
+					"borderStyle": "none",
+					"method": "ObjectMethods/WParea.4dm",
+					"events": [
+						"onLoad",
+						"onLosingFocus",
+						"onGettingFocus",
+						"onSelectionChange",
+						"onAfterEdit"
+					],
+					"showHorizontalRuler": false,
+					"showVerticalRuler": false,
+					"layoutMode": "embedded"
+				},
+				"Text1": {
+					"type": "text",
+					"text": "Code sample",
+					"top": 60,
+					"left": 640,
+					"width": 220,
+					"height": 16,
+					"sizingX": "move",
+					"fontWeight": "bold"
+				},
+				"Text2": {
+					"type": "text",
+					"text": "Standard actions",
+					"top": 270,
+					"left": 640,
+					"width": 220,
+					"height": 16,
+					"sizingX": "move",
+					"fontWeight": "bold"
+				},
+				"Text3": {
+					"type": "text",
+					"text": "Dans l'exemple ci-dessous le surlignage peut-être activé ou non lorsque les références ou les valeurs sont affichées.",
+					"top": 90,
+					"left": 640,
+					"width": 420,
+					"height": 46,
+					"sizingX": "move",
+					"fontWeight": "normal"
+				},
+				"Check Box": {
+					"type": "checkbox",
+					"text": "Highlight values",
+					"top": 162,
+					"left": 900,
+					"width": 220,
+					"height": 20,
+					"events": [
+						"onClick"
+					],
+					"dataSource": "Form:C1466.highlightValues",
+					"method": "ObjectMethods/Check Box.4dm",
+					"focusable": false,
+					"sizingX": "move"
+				},
+				"Check Box2": {
+					"type": "checkbox",
+					"text": "Highlight references",
+					"top": 140,
+					"left": 900,
+					"width": 220,
+					"height": 20,
+					"events": [
+						"onClick"
+					],
+					"dataSource": "Form:C1466.highlightReferences",
+					"method": "ObjectMethods/Check Box2.4dm",
+					"focusable": false,
+					"sizingX": "move"
+				},
+				"Radio Button": {
+					"type": "radio",
+					"text": "Display references",
+					"top": 140,
+					"left": 640,
+					"width": 220,
+					"height": 20,
+					"events": [
+						"onClick"
+					],
+					"dataSource": "Form:C1466.displayReferences",
+					"radioGroup": "RefOrVal",
+					"method": "ObjectMethods/Radio Button.4dm",
+					"focusable": false,
+					"sizingX": "move"
+				},
+				"Radio Button1": {
+					"type": "radio",
+					"text": "Display values",
+					"top": 163,
+					"left": 640,
+					"width": 220,
+					"height": 20,
+					"events": [
+						"onClick"
+					],
+					"dataSource": "Form:C1466.displayValues",
+					"radioGroup": "RefOrVal",
+					"method": "ObjectMethods/Radio Button1.4dm",
+					"focusable": false,
+					"sizingX": "move"
+				},
+				"cb_visibleReferences": {
+					"type": "checkbox",
+					"text": "Show references",
+					"top": 302,
+					"left": 640,
+					"width": 220,
+					"height": 20,
+					"events": [],
+					"action": "visibleReferences",
+					"focusable": false,
+					"sizingX": "move"
+				},
+				"cb_highlightVal": {
+					"type": "checkbox",
+					"text": "Highlight formula values",
+					"top": 400,
+					"left": 640,
+					"width": 220,
+					"height": 20,
+					"events": [],
+					"dataSource": "",
+					"focusable": false,
+					"action": "formulaHighlightValues",
+					"sizingX": "move"
+				},
+				"cb_highlightRef": {
+					"type": "checkbox",
+					"text": "Highlight formula references",
+					"top": 370,
+					"left": 640,
+					"width": 220,
+					"height": 20,
+					"events": [],
+					"dataSource": "",
+					"focusable": false,
+					"action": "formulaHighlightReferences",
+					"sizingX": "move"
+				},
+				"Button": {
+					"type": "button",
+					"text": "Color dialog",
+					"top": 520,
+					"left": 640,
+					"width": 220,
+					"height": 20,
+					"events": [
+						"onClick"
+					],
+					"action": "formulaHighlightColor/showDialog",
+					"focusable": false,
+					"sizingX": "move"
+				},
+				"Button1": {
+					"type": "button",
+					"text": "Color green",
+					"top": 550,
+					"left": 640,
+					"width": 220,
+					"height": 20,
+					"events": [
+						"onClick"
+					],
+					"action": "formulaHighlightColor?value=lightGreen",
+					"focusable": false,
+					"sizingX": "move"
+				},
+				"Popup Dropdown List": {
+					"type": "dropdown",
+					"left": 641,
+					"top": 590,
+					"width": 220,
+					"height": 20,
+					"events": [
+						"onDataChange"
+					],
+					"action": "formulaHighlightColor",
+					"focusable": false,
+					"sizingX": "move"
+				},
+				"Button2": {
+					"type": "button",
+					"text": "Formula settings",
+					"top": 697,
+					"left": 640,
+					"width": 220,
+					"height": 20,
+					"events": [
+						"onClick"
+					],
+					"action": "",
+					"focusable": false,
+					"method": "ObjectMethods/Button2.4dm",
+					"sizingX": "move"
+				},
+				"Popup Dropdown List1": {
+					"type": "dropdown",
+					"left": 641,
+					"top": 440,
+					"width": 220,
+					"height": 20,
+					"events": [
+						"onDataChange"
+					],
+					"action": "formulaHighlight",
+					"focusable": false,
+					"sizingX": "move"
+				},
+				"Text5": {
+					"type": "text",
+					"text": "Menu",
+					"top": 660,
+					"left": 640,
+					"width": 220,
+					"height": 16,
+					"sizingX": "move",
+					"fontWeight": "bold"
+				},
+				"Text6": {
+					"type": "text",
+					"text": "visibleReferences",
+					"top": 304,
+					"left": 900,
+					"width": 278,
+					"height": 16,
+					"fontStyle": "italic",
+					"sizingX": "move"
+				},
+				"Text7": {
+					"type": "text",
+					"text": "formulaHighlightReferences",
+					"top": 372,
+					"left": 900,
+					"width": 278,
+					"height": 16,
+					"fontStyle": "italic",
+					"sizingX": "move"
+				},
+				"Text8": {
+					"type": "text",
+					"text": "formulaHighlightValues",
+					"top": 402,
+					"left": 900,
+					"width": 278,
+					"height": 16,
+					"fontStyle": "italic",
+					"sizingX": "move"
+				},
+				"Text9": {
+					"type": "text",
+					"text": "formulaHighlightColor/showDialog",
+					"top": 522,
+					"left": 900,
+					"width": 278,
+					"height": 16,
+					"fontStyle": "italic",
+					"sizingX": "move"
+				},
+				"Text10": {
+					"type": "text",
+					"text": "formulaHighlightColor?value=lightGreen",
+					"top": 552,
+					"left": 900,
+					"width": 278,
+					"height": 16,
+					"fontStyle": "italic",
+					"sizingX": "move"
+				},
+				"Text12": {
+					"type": "text",
+					"text": "formulaHighlight",
+					"top": 442,
+					"left": 900,
+					"width": 278,
+					"height": 16,
+					"fontStyle": "italic",
+					"sizingX": "move"
+				},
+				"Line": {
+					"type": "line",
+					"top": 350,
+					"left": 640,
+					"width": 500,
+					"height": 1,
+					"stroke": "#808080",
+					"sizingX": "move"
+				},
+				"Line1": {
+					"type": "line",
+					"top": 490,
+					"left": 640,
+					"width": 500,
+					"height": 1,
+					"stroke": "#808080",
+					"sizingX": "move"
+				},
+				"Text11": {
+					"type": "text",
+					"text": "formulaHighlightColor",
+					"top": 592,
+					"left": 900,
+					"width": 278,
+					"height": 16,
+					"fontStyle": "italic",
+					"sizingX": "move"
+				},
+				"Text13": {
+					"type": "text",
+					"text": "(Action)",
+					"top": 270,
+					"left": 900,
+					"width": 230,
+					"height": 16,
+					"sizingX": "move",
+					"fontWeight": "bold"
+				},
+				"Line2": {
+					"type": "line",
+					"top": 250,
+					"left": 640,
+					"width": 500,
+					"height": 1,
+					"stroke": "#696969",
+					"sizingX": "move",
+					"strokeWidth": 2
+				},
+				"Line3": {
+					"type": "line",
+					"top": 640,
+					"left": 640,
+					"width": 500,
+					"height": 1,
+					"stroke": "#696969",
+					"sizingX": "move",
+					"strokeWidth": 2
+				},
+				"cb_visibleReferences1": {
+					"type": "checkbox",
+					"text": "Use Green",
+					"top": 202,
+					"left": 640,
+					"width": 220,
+					"height": 20,
+					"events": [
+						"onClick"
+					],
+					"action": "",
+					"focusable": false,
+					"sizingX": "move",
+					"dataSource": "Form:C1466.highlightGreen",
+					"method": "ObjectMethods/cb_visibleReferences1.4dm"
+				}
+			}
+		}
+	],
+	"$4d": {
+		"version": "1",
+		"kind": "form"
+	},
+	"geometryStamp": 2868,
+	"editor": {
+		"activeView": "View 1",
+		"defaultView": "View 1",
+		"views": {
+			"View 1": {}
+		}
+	},
+	"menuBar": "Menu Bar #1"
+}
